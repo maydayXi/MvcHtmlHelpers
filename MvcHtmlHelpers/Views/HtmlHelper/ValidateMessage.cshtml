@@ -1,0 +1,25 @@
+﻿@model MvcHtmlHelpers.Models.User
+@{
+    ViewBag.Title = "ValidateMessage";
+}
+
+<h2>ValidateMessage</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        @Html.Label("Name", new { @class = "col-md-1 text-center mb-0 pt-1" })
+        @Html.TextBox("Name", null, new { @class = "col-md-1 form-control mr-2" })
+        @Html.ValidationMessage("Name", new { @class = "text-danger pt-1 font-weight-bold" })
+    </div>
+    <hr />
+    <div class="row">
+        @Html.LabelFor(m => m.Password, new { @class = "col-md-1 pt-1" })
+        @Html.PasswordFor(m => m.Password, new { @class="col-md-1 mr-2 form-control"})
+        @Html.ValidationMessageFor(m => m.Password, null, new { @class="pt-1 text-center font-weight-bold text-danger"})
+    </div>
+    <br />
+    <input type="submit" value="Submit" class="btn btn-success"/>
+    @Html.ValidationSummary(null, new { 
+    @class = "text-danger mt-3 d-block font-weight-bold"})
+}

@@ -1,0 +1,82 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.jumbotron #FuncIntro {
+    border-top: 2px dashed #055760;
+    border-bottom: 2px dashed #055760;
+}
+
+.container .row .card:first-child {
+    border: 1.5px solid #ffeeba;
+}
+
+.container .row .card:first-child .card-header {
+    border-bottom-color: #ffeeba;
+    border-bottom-width: 1.5px;
+}
+
+.container .row .card:nth-child(2) {
+    border: 1.5px solid #b8daff;
+}
+
+.container .row .card:nth-child(2) .card-header {
+    border-bottom-color: #b8daff;
+    border-bottom-width: 1.5px;
+}
+
+.container .row .card:nth-child(3) {
+    border: 1.5px solid #c3e6cb;
+}
+
+.container .row .card:nth-child(3) .card-header {
+    border-bottom-color: #c3e6cb;
+    border-bottom-width: 1.5px;
+}
+
+.validation-summary-errors ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#detailContainer > .row > .col-md-3 {
+    border: 2px solid #055760;
+}
+
+#detailContainer > .row > .col-md-8 {
+    border-bottom: 2px dashed #055760;
+}
+
+#detailContainer > .row > .col-md-3,
+#detailContainer > .row > .col-md-8 {
+    font-size: 15pt;
+}
+
+#deleteContainer > .row > .col-md-3 {
+    border: 2px solid #055760;
+}
+
+#deleteContainer > .row > .col-md-8 {
+    border-bottom: 2px dashed #055760;
+}
+
+#deleteContainer > .row > .col-md-3,
+#deleteContainer > .row > .col-md-8 {
+    font-size: 15pt;
+}

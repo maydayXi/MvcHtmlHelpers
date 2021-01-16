@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+        <div class="navbar-header">
+            <a href="@Url.Action("Index", "Home", new { erea = "" })" class="navbar-brand">
+                <i class="fa fa-home"></i>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse"
+                    data-target="#NavItem" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div id="NavItem" class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto font-weight-bold">
+                <li class="nav-item">@Html.ActionLink("關於", "About", "Home", null, new { @class = "nav-link" })</li>
+                <li class="nav-item">@Html.ActionLink("連絡人", "Contact", "Home", null, new { @class = "nav-link" })</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer class="text-center">
+            <p>&copy; @DateTime.Now.Year - MVC 範例 - 人力資源系統</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("endJS", required: false)
+    @RenderSection("scripts", required: false)
+</body>
+</html>

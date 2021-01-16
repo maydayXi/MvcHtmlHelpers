@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "關於";
+}
+<h2 class="mt-3 mb-3 w-100 text-center font-weight-bold">技術文件</h2>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="list-group" id="doc_list" role="tablist">
+            <a class="list-group-item list-group-item-action list-group-item-info active" href="#list_html"
+               data-toggle="list" role="tab" id="Item_html">
+                HTML
+            </a>
+            <a class="list-group-item list-group-item-action list-group-item-info" href="#list_bootstrap"
+               data-toggle="list" role="tab" id="Item_bootstrap">
+                Bootstrap
+            </a>
+            <a class="list-group-item list-group-item-action list-group-item-info" href="#list_fontawesome"
+               data-toggle="list" role="tab" id="Item_fontawesome">
+                Font Awesome
+            </a>
+            <a class="list-group-item list-group-item-action list-group-item-info" href="#list_csharp"
+               data-toggle="list" role="tab" id="Item_csharp">
+                C#
+            </a>
+            <a class="list-group-item list-group-item-action list-group-item-info" href="#list_aspnet"
+               data-toggle="list" role="tab" id="Item_aspnet">
+                ASP.NET MVC Framework
+            </a>
+            <a class="list-group-item list-group-item-action list-group-item-info" href="#list_htmlhelper"
+               data-toggle="list" role="tab" id="Item_htmlhelper">
+                Html Helper
+            </a>
+            <a class="list-group-item list-group-item-action list-group-item-info" href="#list_entityframework"
+               data-toggle="list" role="tab" id="Item_entityframework">
+                Entity Framework
+            </a>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="list_html" role="tabpanel" aria-labelledby="Itme_html">
+                <p class="text-justify">超文本標記語言（HyperText Markup Language，簡稱 HTML）是一種用於建立網頁的標準標記語言。HTML是一種基礎技術，常與CSS、JavaScript一起被眾多網站用於設計網頁、網頁應用程式以及行動應用程式的使用者介面</p>
+                ※ 參考&nbsp;
+                <a href="https://www.w3schools.com/html/html_intro.asp" target="_blank" class="text-decoration-none font-weight-bold text-primary">
+                    W3School HTML Intro Page&nbsp;<i class="fa fa-external-link"></i>
+                </a>
+            </div>
+            <div class="tab-pane fade show" id="list_bootstrap" role="tabpanel" aria-labelledby="Item_bootstrap">
+                <p class="text-justify">Bootstrap是一組用於網站和網路應用程式開發的開源前端框架，提供字體排印、表單、按鈕、導航及其他各種元件及Javascript擴充套件，旨在使動態網頁和Web應用的開發更加容易。</p>
+                <span>※ 本範例採用 4.5 版本，參考</span>&nbsp;
+                <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/" target="_blank" class="font-weight-bold text-decoration-none">
+                    Bootsrap 4.5 官方文件&nbsp;<i class="fa fa-external-link"></i>
+                </a>
+            </div>
+            <div class="tab-pane fade show" id="list_fontawesome" role="tabpanel" aria-labelledby="Item_fontawesome">
+                <p class="text-justify">
+                    Font Awesome 是一個基於CSS和LESS的字體和圖標工具套件。它由Dave Gandy製作，用於Twitter Bootstrap，後來被整合到BootstrapCDN 中。Font Awesome在使用第三方Font Scripts的網站中佔有20％的市場份額，排在Google字型之後的第二位。
+                </p>
+                <span>※ 本範例採用 4.7 版本，參考</span>&nbsp;
+                <a href="https://fontawesome.com/v4.7.0/" class="text-decoration-none font-weight-bold" target="_blank">
+                    Font Awesome 官方文件&nbsp;<i class="fa fa-external-link"></i>
+                </a>
+            </div>
+            <div class="tab-pane fade show" id="list_csharp" role="tabpanel" aria-labelledby="Item_csharp">
+                <p class="text-justify">C#是微軟推出的一種基於.NET框架的、物件導向的進階程式語言。C#是一種由C和C++衍生出來的物件導向的程式語言。它在繼承C和C++強大功能的同時去掉了一些它們的複雜特性，使其成為C語言家族中的一種高效強大的程式語言。C#以.NET框架類別館作為基礎，擁有類似Visual Basic的快速開發能力。C#由安德斯·海爾斯伯格主持開發，微軟在2000年發布了這種語言，希望藉助這種語言來取代Java。</p>
+                ※ 參考&nbsp;
+                <a href="https://docs.microsoft.com/zh-tw/dotnet/csharp/" class="font-weight-bold text-decoration-none" target="_blank">
+                    C# 微軟官方文件&nbsp;<i class="fa fa-external-link"></i>
+                </a>
+            </div>
+            <div class="tab-pane fade show" id="list_aspnet" role="tabpanel" aria-labelledby="Item_aspnet">
+                <p class="text-justify">ASP.NET MVC Framework是微軟在ASP.NET中所添加的一組類別庫，這組類別庫可以使用Model-View-Controller的設計模式來開發ASP.NET的應用程式。它與現有的ASP.NET應用程式並沒有衝突，所以兩者是可以並行的。ASP.NET MVC Framework被包裝在System.Web.Mvc.dll中，並利用ASP.NET Routing來支援動作流以及URL Rewriting的能力，讓它可以更貼近Web的發展以及Web 2.0的特性。微軟於 ASP.NET Core 中提出下一代的 MVC 框架，稱為 ASP.NET Core MVC。</p>
+                ※ 參考&nbsp;
+                <a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/first-mvc-app/?view=aspnetcore-5.0"
+                   class="font-weight-bold text-decoration-none" target="_blank">
+                    ASP.NET Core MVC 微軟官方文件&nbsp;<i class="fa fa-external-link"></i>
+                </a>
+            </div>
+            <div class="tab-pane fade show" id="list_htmlhelper" role="tabpanel" aria-labelledby="Item_htmlhelper">
+                <p class="text-justify">
+                    HTML Helper 是在 View 中產生 HTML 元素的指令，E.G. Form、Label、Input、Select、Radio、Checkbox、超連結、驗證訊息。
+                </p>
+                ※ 參考&nbsp;
+                <a href="https://docs.microsoft.com/zh-tw/dotnet/api/system.web.mvc.htmlhelper?view=aspnet-mvc-5.2" 
+                   class="text-decoration-none font-weight-bold" target="_blank">
+                    HTML Helper 微軟官方文件&nbsp;<i class="fa fa-external-link"></i>
+                </a>
+            </div>
+            <div class="tab-pane fade show" id="list_entityframework" role="tabpanel" aria-labelledby="Item-entityframework">
+                <p class="text-justify">
+                    Entity Framework (又稱ADO.NET Entity Framework) 是微軟以 ADO.NET 為基礎所發展出來的物件關聯對應 (O/R Mapping) 解決方案。
+                    <br />
+                    ADO.NET Entity Framework 以 Entity Data Model (EDM) 為主，將資料邏輯層切分為三塊，分別為 Conceptual Schema, Mapping Schema 與 Storage Schema 三層，其上還有 Entity Client，Object Context 以及 LINQ 可以使用。
+                    <hr />
+                    語言整合查詢（英語：Language Integrated Query，縮寫：LINQ），是微軟的一項技術，新增一種自然查詢的SQL語法到.NET Framework的程式語言中，目前可支援C#以及Visual Basic .NET語言。
+                    <br />
+                    2007年11月19日隨.NET Framework 3.5發布了LINQ技術。包括LINQ to Objects、LINQ to SQL、LINQ to Datasets、LINQ to Entities、LINQ to Data Source、LINQ to XML/XSD等。
+                </p>
+                ※ 參考&nbsp;
+                <a href="https://docs.microsoft.com/zh-tw/ef/ef6/?redirectedfrom=MSDN" class="text-decoration-none font-weight-bold"
+                   target="_blank">
+                    Entity Framework 微軟官方文件&nbsp;<i class="fa fa-external-link"></i>
+                </a><br />
+                ※ 參考&nbsp;
+                <a href="https://docs.microsoft.com/zh-tw/dotnet/csharp/programming-guide/concepts/linq/" class="text-decoration-none font-weight-bold"
+                   target="_blank">
+                    LINQ 微軟官方文件&nbsp;<i class="fa fa-external-link"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

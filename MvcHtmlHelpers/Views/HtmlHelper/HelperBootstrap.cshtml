@@ -1,0 +1,288 @@
+﻿@model MvcHtmlHelpers.Models.User
+@{
+    ViewBag.Title = "HelperBootstrap";
+}
+
+<h2 class="font-weight-bold w-100 text-center">HelperBootstrap</h2>
+
+<!-- #region BeginForm -->
+@using (Html.BeginForm("HelperBootstrap", "HtmlHelper", FormMethod.Post,
+    htmlAttributes: new { @class = "form-horizontal", role = "form" }))
+{
+
+}
+<!-- #endregion -->
+
+<!-- #region Label -->
+<h4 class="font-weight-bold ml-5">
+    Label
+</h4>
+<div class="row mb-3">
+    @Html.Label("Name", htmlAttributes: new
+        { @class = "font-weight-bold col-md-1", @style = "color: red; font-size: 16pt;" })
+    <!--<label class="font-weight-bold" for="Name" style="color: red; font-size: 16pt;">Name</label>-->
+    @Html.LabelFor(m => m.Name,
+        new { @class = "font-weight-bold col-md-1", @style = "color: blue; font-size: 16pt;" })
+    <!--<label class="font-weight-bold mr-3" for="Name" style="color: blue; font-size: 16pt;">Name</label>-->
+</div>
+<hr />
+<!-- #endregion -->
+
+<!-- #region TextBox -->
+<h4 class="font-weight-bold ml-5">
+    TextBox
+</h4>
+<div class="row mb-3">
+    @Html.TextBox("Name", null, new
+    {
+        @class = "d-inline-block form-control col-md-1 ml-3 mr-3 font-weight-bold",
+        @style = "background: bisque;"
+    })
+    <!--<input class="d-inline-block form-control col-md-1 ml-3 mr-3 font-weight-bold" data-val="true" data-val-required="Name 必需輸入" id="Name" name="Name" style="background: bisque;" type="text" value="David">-->
+    @Html.TextBoxFor(m => m.Name, null, new
+    {
+        @class = "d-inline-block col-md-1 form-control font-weight-bold",
+        @style = "background: lightblue"
+    })
+    <!--<input class="d-inline-block col-md-1 form-control font-weight-bold" id="Name" name="Name" style="background: lightblue" type="text" value="David">-->
+</div>
+<hr />
+<!-- #endregion -->
+
+<!-- #region Password -->
+<h4 class="font-weight-bold ml-5">
+    Password
+</h4>
+<div class="row mb-3">
+    @Html.Password("Password", null, new
+    {
+        @class = "form-control d-inline-block mr-3 col-md-1 ml-3",
+        @style = "background: lightgreen"
+    })
+    <!--<input class="form-control d-inline-block mr-3 col-md-1 ml-3" data-val="true" data-val-required="Password 必需輸入" id="Password" name="Password" style="background: lightgreen" type="password">-->
+    @Html.PasswordFor(m => m.Password, new
+    {
+        @class = "form-control col-md-1"
+    })
+    <!--<input class="form-control col-md-1" id="Password" name="Password" type="password">-->
+</div>
+<hr />
+<!-- #endregion -->
+
+<!-- #region CheckBox -->
+<h4 class="font-weight-bold ml-5">
+    CheckBox
+</h4>
+<div class="row mb-3">
+    @Html.CheckBox("Term", true, new
+    {
+        title = "同意",
+        @class = "ml-4 mr-3"
+    })
+    <!--<input checked="checked" class="ml-4 mr-3" id="Term" name="Term" title="同意" type="checkbox" value="true">-->
+    <span class="col-md-1">條款</span>
+    @Html.CheckBoxFor(m => m.Terms, new
+    {
+        disabled = "disabled",
+        @class = ""
+    })
+    <!--<input checked="checked" class="" data-val="true" data-val-required="Terms 欄位是必要項。" disabled="disabled" id="Terms" name="Terms" type="checkbox" value="true">-->
+    <span class="ml-4">條款</span>
+</div>
+<hr />
+<!-- #endregion -->
+
+<!-- #region RadioButton -->
+<h4 class="font-weight-bold ml-5">
+    RadioButton
+</h4>
+<div class="row mb-3">
+    @Html.RadioButton("Gender", "Female", true, new
+    {
+        title = "你的性別",
+        @class = "ml-4"
+    })
+    <!--<input checked="checked" class="mr-3 ml-4" data-val="true" data-val-number="欄位 Gender 必須是數字。" data-val-required="Gender 欄位是必要項。" id="Gender" name="Gender" title="你的性別" type="radio" value="Female">-->
+    <span class="col-md-1">女</span>
+    @Html.RadioButtonFor(m => m.Gender, "Male", new
+    {
+        id = "Male"
+    })
+    <!--<input id="Male" name="Gender" type="radio" value="Male">-->
+    <span class="col-md-1">男</span>
+</div>
+<hr />
+<!-- #endregion -->
+
+<!-- #region DropDownList -->
+<h4 class="font-weight-bold ml-5">
+    DropDownList
+</h4>
+<div class="row mb-3">
+    @Html.DropDownList("縣市",
+    new SelectList(new[]
+    {
+        "台北", "台中", "高雄"
+    }),
+    new
+    {
+        @class = "form-control col-md-1 ml-3 d-inline-block",
+    })
+    <!--
+        <select class="form-control col-md-1 ml-3 d-inline-block" name="縣市">
+            <option>台北</option>
+            <option>台中</option>
+            <option>高雄</option>
+        </select>
+        -->
+    @Html.DropDownListFor(m => m.City, new SelectList(new[]
+    {
+        "彰化", "嘉義", "台南"
+    }),
+    new
+    {
+        @class = "form-control ml-3 col-md-1 d-inline-block"
+    })
+    <!--
+        <select class="form-control ml-3 col-md-1 d-inline-block" data-val="true" 
+        data-val-number="欄位 City 必須是數字。" data-val-required="City 欄位是必要項。" 
+        id="City" name="City">
+            <option>彰化</option>
+            <option>嘉義</option>
+            <option>台南</option>
+        </select>
+    -->
+</div>
+<hr />
+<!-- #endregion -->
+
+<!-- #region ListBox -->
+<h4 class="font-weight-bold ml-5">
+    ListBox
+</h4>
+<div class="row mb-3">
+    @Html.ListBox("Commutermode", new SelectList(new[]
+    {
+        "機車", "公車", "汽車", "火車", "捷運"
+    }),
+    new
+    {
+        @class = "form-control col-md-1 ml-3 mr-3",
+        title = "通勤方式"
+    })
+    <!--
+        <select class="form-control col-md-1 ml-3 mr-3" id="Commutermode"
+        multiple="multiple" name="Commutermode" title="通勤方式">
+            <option>機車</option>
+            <option>公車</option>
+            <option>汽車</option>
+            <option>火車</option>
+            <option>捷運</option>
+        </select>
+    -->
+    @Html.ListBoxFor(m => m.Commutermode, new SelectList(new[]
+    {
+        "機車", "公車", "汽車", "火車", "捷運"
+    }),
+    new
+    {
+        @class = "form-control col-md-1",
+        title = "通勤方式"
+    })
+    <!--
+        <select class="form-control col-md-1" id="Commutermode" 
+        multiple="multiple" name="Commutermode" title="通勤方式">
+            <option>機車</option>
+            <option>公車</option>
+            <option>汽車</option>
+            <option>火車</option>
+            <option>捷運</option>
+        </select>
+        -->
+</div>
+<hr />
+<!-- #endregion -->
+
+<!-- #region TextArea -->
+<div class="row">
+    <h4 class="font-weight-bold col-md-6 text-center ml-3">
+        TextArea
+    </h4>
+</div>
+<div class="row mb-3">
+    @Html.TextArea("Comment",
+    new
+        {
+            @class = "form-control col-md-3 ml-3 mr-3",
+        maxlength = "255",
+        placeholder = "Input Text ......"
+    })
+    <!--<textarea class="form-control col-md-3 ml-3" cols="20" id="Comment"
+        maxlength="255" name="Comment" placeholder="Input Text ......" rows="2"></textarea>-->
+    @Html.TextAreaFor(m => m.Comment,
+    new
+        {
+            @class = "form-control col-md-3",
+        maxlength = "255",
+        placeholder = "Leave Message ......"
+    })
+    <!--<textarea class="form-control col-md-3" cols="20" id="Comment" 
+        maxlength="255" name="Comment" placeholder="Leave Message ......" 
+        rows="2"></textarea>-->
+</div>
+<hr />
+<!-- #endregion -->
+
+<!-- #region ActionLink -->
+<h4 class="font-weight-bold col-md-12 text-center ml-3">
+    ActionLink
+</h4>
+<div class="row mb-3 ml-0">
+    @Html.ActionLink("新增", "Create", null,
+    new
+        {
+        @class = "btn btn-success col-md-2 font-weight-bold shadow"
+    })
+    <!--<a class="btn btn-success col-md-2 font-weight-bold shadow" href="/HtmlHelper/Create">新增</a>-->
+    @Html.ActionLink("明細", "Details", new { id = Model.Id },
+    new { @class = "btn btn-info col-md-2 offset-md-1 font-weight-bold shadow" })
+    <!--<a class="btn btn-info col-md-2 offset-md-1 font-weight-bold shadow" href="/HtmlHelper/Details/1001">明細</a>-->
+    @Html.ActionLink("編輯", "Edit", new { id = Model.Id },
+    new { @class = "btn btn-warning text-white col-md-2 offset-md-1 font-weight-bold shadow" })
+    <!--<a class="btn btn-warning text-white col-md-2 offset-md-1 font-weight-bold shadow" href="/HtmlHelper/Edit/1001">編輯</a>-->
+    @Html.ActionLink("刪除", "Delete", new { id = Model.Id },
+    new { @class = "btn btn-danger col-md-2 offset-md-1 font-weight-bold shadow" })
+    <!--<a class="btn btn-danger col-md-2 offset-md-1 font-weight-bold shadow" href="/HtmlHelper/Delete/1001">刪除</a>-->
+</div>
+<!-- #endregion -->
+
+<!-- #region ValidationMessage -->
+@Html.ValidationMessage("Name", "", new { @class = "text-danger" })
+@Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+<!-- #endregion -->
+
+<!-- #region Editor -->
+<h4 class="font-weight-bold ml-3 col-md-6 text-center mb-3">
+    ActionLink
+</h4>
+<div class="row mb-3 ml-0">
+    @Html.Editor("Email", new
+    {
+        htmlAttributes = new
+        {
+            @class = "form-control font-weight-bold col-md-2", 
+            @style = "background-color: cyan"
+        }
+    })
+
+    @Html.EditorFor(m => m.Email, new
+    {
+        htmlAttributes = new
+        {
+            @class = "form-control font-weight-bold col-md-2 offset-md-1",
+            @style = "background-color: lightpink"
+        }
+    })
+</div>
+<!-- #endregion -->

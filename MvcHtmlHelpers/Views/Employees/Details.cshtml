@@ -1,0 +1,79 @@
+﻿@model MvcHtmlHelpers.Models.Employee
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="card mt-3 shadow">
+    <div class="card-title alert-warning mb-0">
+        <h2 class="w-100 text-center font-weight-bold mt-3 mb-3">
+            <i class="fa fa-list"></i>
+            員工個人資料明細
+        </h2>
+    </div>
+    <div class="card-body p-0">
+        <div id="detailContainer" class="alert alert-info mb-0">
+            <div class="row mb-3">
+                <div class="col-md-3 rounded text-right ml-3 p-2 pr-3 font-weight-bold">
+                    @Html.DisplayNameFor(m => m.Id)
+                </div>
+                <div class="col-md-8 ml-4 p-2 pl-3">
+                    @Html.DisplayFor(m => m.Id)
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 rounded text-right ml-3 p-2 pr-3 font-weight-bold">
+                    @Html.DisplayNameFor(m => m.Name)
+                </div>
+                <div class="col-md-8 ml-4 p-2 pl-3">
+                    @Html.DisplayFor(m => m.Name)
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 rounded text-right ml-3 p-2 pr-3 font-weight-bold">
+                    @Html.DisplayNameFor(m => m.Mobile)
+                </div>
+                <div class="col-md-8 ml-4 p-2 pl-3">
+                    @Html.DisplayFor(m => m.Mobile)
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 rounded text-right ml-3 p-2 pr-3 font-weight-bold">
+                    @Html.DisplayNameFor(m => m.Email)
+                </div>
+                <div class="col-md-8 ml-4 p-2 pl-3">
+                    @Html.DisplayFor(m => m.Email)
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 rounded text-right ml-3 p-2 pr-3 font-weight-bold">
+                    @Html.DisplayNameFor(m => m.Department)
+                </div>
+                <div class="col-md-8 ml-4 p-2 pl-3">
+                    @Html.DisplayFor(m => m.Department)
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 rounded text-right ml-3 p-2 pr-3 font-weight-bold">
+                    @Html.DisplayNameFor(m => m.Title)
+                </div>
+                <div class="col-md-8 ml-4 p-2 pl-3">
+                    @Html.DisplayFor(m => m.Title)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="row mb-3 ml-0">
+            <a href="@Url.Action("Edit", new { id = Model.Id})"
+               class="btn btn-success font-weight-bold col-md-1 shadow">
+                <i class="fa fa-pencil"></i>
+                編輯
+            </a>
+            <a href="@Url.Action("Index")"
+               class="btn btn-primary font-weight-bold col-md-2 shadow ml-4">
+                <i class="fa fa-home"></i>
+                回員工列表
+            </a>
+        </div>
+    </div>
+</div>

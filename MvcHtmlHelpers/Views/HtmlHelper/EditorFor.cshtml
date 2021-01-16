@@ -1,0 +1,97 @@
+﻿@model MvcHtmlHelpers.Models.RegisterDataAnnotations
+
+@{
+    ViewBag.Title = "EditorFor";
+    var labelClass = "col-md-2 pt-2 pr-4 mb-0 mr-2 rounded text-right alert-secondary font-weight-bold";
+}
+
+<h2 class="mb-3 mt-2 font-weight-bold">Sing Up Form</h2>
+
+<div class="card" id="SingUpCard">
+    <div class="card-header bg-dark">
+        <h3 class="card-title text-center text-white font-weight-bold">
+            Html.EditorFor() 遇到不同的資料型別產生不同控制項
+        </h3>
+    </div>
+    <div class="card-body">
+        @using (Html.BeginForm())
+        {
+            <div class="row mb-3">
+                @Html.LabelFor(r => r.Id, new { @class = labelClass })
+                @Html.EditorFor(r => r.Id)
+            </div>
+            <div class="row mb-3">
+                @Html.LabelFor(r => r.Name, new { @class = labelClass })
+                @Html.EditorFor(r => r.Name)
+            </div>
+            <div class="row mb-3">
+                @Html.LabelFor(r => r.Password, new { @class = labelClass })
+                @Html.EditorFor(r => r.Password)
+            </div>
+            <div class="row mb-3">
+                @Html.LabelFor(r => r.Email, new { @class = labelClass })
+                @Html.EditorFor(r => r.Email)
+            </div>
+            <div class="row mb-3">
+                @Html.LabelFor(r => r.Blog, new { @class = labelClass })
+                @Html.EditorFor(r => r.Blog)
+            </div>
+            <div class="row mb-3">
+                @Html.LabelFor(r => r.Gender, new { @class = labelClass })
+                @Html.EditorFor(r => r.Gender)
+            </div>
+            <div class="row mb-3">
+                @Html.LabelFor(r => r.Birthday, new { @class = labelClass })
+                @Html.EditorFor(r => r.Birthday)
+            </div>
+            <div class="row mb-3">
+                @Html.LabelFor(r => r.Birthday2, new { @class = labelClass })
+                @Html.EditorFor(r => r.Birthday2)
+            </div>
+            <div class="row mb-3">
+                @Html.LabelFor(r => r.Income, new { @class = labelClass})
+                @Html.EditorFor(r => r.Income)
+            </div>
+            <div class="row mb-3">
+                @Html.LabelFor(r => r.City, new { @class = labelClass })
+                @Html.EditorFor(r => r.City)
+            </div>
+            <div class="row mb-3">
+                @Html.LabelFor(r => r.Comment, new { @class = labelClass})
+                @Html.EditorFor(r => r.Comment)
+            </div>
+            <div class="row mb-3">
+                @Html.LabelFor(r => r.Terms, new { @class = labelClass })
+                @Html.EditorFor(r => r.Terms)
+            </div>
+            <div class="row">
+                <input type="submit" value="Submit" class="btn btn-success font-weight-bold shadow col-md-4 offset-md-4" />
+            </div>
+        }
+    </div>
+</div>
+
+<!-- #region JavaSctip Section -->
+@section endJs {
+    <script>
+        $().ready(function () {
+            $row     = $('#SingUpCard form .row');
+            $input   = $row.children();
+            $comment = $row.find('textarea');
+
+            var TermsBefore = '<span class="mr-2 pt-2">我同意</span>';
+
+            $comment.attr('placeholder', 'Leave Message ......');
+
+            $input.each(function () {
+                if ($(this).attr('type') != 'checkbox')
+                    $(this).addClass('form-control');
+                else {
+                    $(this).before(TermsBefore);
+                    $(this).addClass('rounded-circle mt-1');
+                }
+            });
+        });
+    </script>
+}
+<!-- #endregion -->

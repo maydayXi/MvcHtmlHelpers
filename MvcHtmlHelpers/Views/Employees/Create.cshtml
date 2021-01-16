@@ -1,0 +1,101 @@
+﻿@model MvcHtmlHelpers.Models.Employee
+@{
+    ViewBag.Title = "Create";
+    string modelName = "Employee";
+}
+
+<h2 class="mb-3 mt-3">Create</h2>
+
+@using (Html.BeginForm())
+{
+    <!--
+        Html.AntiForgeryToken() 用來防止
+        Cross-site request forgery 攻擊（XSRF or CSRF）
+        需同時在 [HttpPost] 的 ActionResult 方法宣告 [ValidateAntiForgeryToken]
+    -->
+    @Html.AntiForgeryToken()
+    <h4>@modelName</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="row mb-3 w-75 ml-auto mr-auto">
+        @Html.LabelFor(m => m.Name,
+        new { @class = "col-md-2 font-weight-bold pt-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.Name, new
+            {
+                htmlAttributes = new { @class = "form-control" }
+            })
+            @Html.ValidationMessageFor(m => m.Name, null, 
+            new { @class = "text-danger font-weight-bold" })
+        </div>
+    </div>
+
+    <div class="row mb-3 w-75 ml-auto mr-auto">
+        @Html.LabelFor(m => m.Mobile,
+        new { @class = "col-md-2 font-weight-bold pt-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.Mobile, new
+            {
+                htmlAttributes = new { @class = "form-control" }
+            })
+            @Html.ValidationMessageFor(m => m.Mobile, null, 
+            new { @class = "text-danger font-weight-bold" })
+        </div>
+    </div>
+
+    <div class="row mb-3 w-75 ml-auto mr-auto">
+        @Html.LabelFor(m => m.Email, 
+        new { @class = "col-md-2 font-weight-bold pt-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.Email, new { 
+                htmlAttributes = new { @class = "form-control" }    
+            })
+            @Html.ValidationMessageFor(m => m.Email, null, 
+            new { @class = "text-danger font-weight-bold" })
+        </div>
+    </div>
+
+    <div class="row mb-3 w-75 ml-auto mr-auto">
+        @Html.LabelFor(m => m.Department, 
+        new { @class = "col-md-2 font-weight-bold pt-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.Department, new
+            {
+                htmlAttributes = new { @class = "form-control" }
+            })
+            @Html.ValidationMessageFor(m => m.Department, null,
+            new { @class = "text-danger font-weight-bold" })
+        </div>
+    </div>
+
+    <div class="row mb-3 w-75 ml-auto mr-auto">
+        @Html.LabelFor(m => m.Title, 
+        new { @class = "col-md-2 font-weight-bold pt-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.Title,
+            new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.Title, null,
+            new { @class = "text-danger font-weight-bold" })
+        </div>
+    </div>
+
+    <div class="row w-75 mr-auto ml-auto">
+        <button type="submit" class="btn btn-success col-md-2 font-weight-bold shadow">
+            <i class="fa fa-plus mr-2"></i>
+            新增
+        </button>
+    </div>
+}
+
+<a href="@Url.Action("Index", "Employees")" 
+   class="btn btn-outline-primary font-weight-bold">
+    <i class="fa fa-home"></i>
+    返回首頁
+</a>
+
+@* ValidationSummary & ValidationMessage 
+    方法前驗證需使用 jQuery Validation *@
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

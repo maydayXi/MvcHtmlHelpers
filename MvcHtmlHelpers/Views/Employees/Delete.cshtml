@@ -1,0 +1,82 @@
+﻿@model MvcHtmlHelpers.Models.Employee
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="card shadow mt-3">
+        <div class="card-title alert-danger mb-0">
+            <h2 class="w-100 text-center font-weight-bold mt-3 mb-3">
+                <i class="fa fa-trash-o"></i>
+                刪除員工確認
+            </h2>
+        </div>
+        <div class="card-body p-0">
+            <div id="deleteContainer" class="alert alert-info mb-0">
+                <div class="row mb-3">
+                    <div class="col-md-3 rounded text-right ml-3 p-2 pr-3 font-weight-bold">
+                        @Html.DisplayNameFor(m => m.Id)
+                    </div>
+                    <div class="col-md-8 ml-4 p-2 pl-3">
+                        @Html.DisplayFor(m => m.Id)
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-3 rounded text-right ml-3 p-2 pr-3 font-weight-bold">
+                        @Html.DisplayNameFor(m => m.Name)
+                    </div>
+                    <div class="col-md-8 ml-4 p-2 pl-3">
+                        @Html.DisplayFor(m => m.Name)
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-3 rounded text-right ml-3 p-2 pr-3 font-weight-bold">
+                        @Html.DisplayNameFor(m => m.Mobile)
+                    </div>
+                    <div class="col-md-8 ml-4 p-2 pl-3">
+                        @Html.DisplayFor(m => m.Mobile)
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-3 rounded text-right ml-3 p-2 pr-3 font-weight-bold">
+                        @Html.DisplayNameFor(m => m.Email)
+                    </div>
+                    <div class="col-md-8 ml-4 p-2 pl-3">
+                        @Html.DisplayFor(m => m.Email)
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-3 rounded text-right ml-3 p-2 pr-3 font-weight-bold">
+                        @Html.DisplayNameFor(m => m.Department)
+                    </div>
+                    <div class="col-md-8 ml-4 p-2 pl-3">
+                        @Html.DisplayFor(m => m.Department)
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-3 rounded text-right ml-3 p-2 pr-3 font-weight-bold">
+                        @Html.DisplayNameFor(m => m.Title)
+                    </div>
+                    <div class="col-md-8 ml-4 p-2 pl-3">
+                        @Html.DisplayFor(m => m.Title)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row mb-3 ml-0">
+                <button type="submit" class="btn btn-danger font-weight-bold col-md-1 shadow">
+                    <i class="fa fa-trash-o"></i>
+                    刪除
+                </button>
+                <a href="@Url.Action("Index", "Employees")" class="btn btn-primary col-md-2 ml-4 shadow font-weight-bold">
+                    <i class="fa fa-home"></i>
+                    返回首頁
+                </a>
+            </div>
+        </div>
+    </div>
+}

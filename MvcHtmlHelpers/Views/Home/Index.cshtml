@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "MVC 範例";
+}
+
+<div class="jumbotron pt-3 pb-3 shadow">
+    <h1>ASP.NET MVC</h1>
+    <p class="lead">
+        本範例以 MVC 架構實作單的人力資源系統<br />
+        含簡易的 CRUD 操作，功能說明如下
+        <div id="FuncIntro" class="p-3 rounded">
+            <div class="row mb-2 text-success">
+                <span class="font-weight-bold col-md-1">Create：</span>
+                <span class="col-md-8">新增員工資料</span>
+            </div>
+            <div class="row text-info">
+                <span class="font-weight-bold col-md-1">Read：</span>
+                <span class="col-md-1">Index</span>
+                <span class="col-md-2">- 顯示所有員工資訊</span>
+            </div>
+            <div class="row mb-2 text-info">
+                <span class="col-md-1 offset-md-1">Details</span>
+                <span class="col-md-2">- 顯示個別員工資訊</span>
+            </div>
+            <div class="row mb-2 text-warning">
+                <span class="font-weight-bold col-md-1">Update：</span>
+                <span class="col-md-3">新更（編輯）員工資料</span>
+            </div>
+            <div class="row mb-2 text-danger">
+                <span class="font-weight-bold col-md-1">Delete：</span>
+                <span class="col-md-3">刪除員工資料</span>
+            </div>
+        </div>
+    </p>
+</div>
+
+<div class="row ml-0">
+    <div class="col-md-3 rounded card shadow">
+        <div class="card-header text-warning bg-transparent p-2">
+            <div class="card-title text-center mb-0">
+                <h3 class="font-weight-bold">
+                    <i class="fa fa-file-code-o"></i>
+                    關於
+                </h3>
+            </div>
+        </div>
+        <div class="card-body">
+            <p>
+                說明本範例所使用到的相關技術<br />
+                <ul class="font-weight-bold text-warning">
+                    <li>CSS</li>
+                    <li>Bootstarp</li>
+                    <li>HtmlHelper</li>
+                    <li>C# MVC Entity Framework</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-3 offset-md-1 rounded card shadow">
+        <div class="card-header bg-transparent p-2">
+            <h3 class="font-weight-bold text-primary text-center">
+                <i class="fa fa-user-circle-o"></i>
+                聯絡人
+            </h3>
+        </div>
+        <div class="card-body">
+            <p>
+                創作者相關資訊<br />
+                <ul class="font-weight-bold text-primary">
+                    <li>Resume</li>
+                    <li>Github</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-3 offset-md-1 rounded card shadow">
+        <div class="card-header bg-transparent p-2">
+            <h3 class="font-weight-bold text-success text-center">
+                <i class="fa fa-id-card-o"></i>
+                範例
+            </h3>
+        </div>
+        <div class="card-body">
+            <p>
+                人力資源系統範例<br />
+                <a href="@Url.Action("Index", "Employees")" class="shadow btn btn-outline-success font-weight-bold mt-2">
+                    <i class="fa fa-search"></i>
+                    See more......
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
